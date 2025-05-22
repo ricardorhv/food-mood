@@ -4,7 +4,9 @@
 
 <hr>
 
-## Application to order foods
+<h1 align="center">FoodMood</h1>
+
+## App to order foods from any restaurant in your city
 
 <img src="./.github/cover.jpg">
 
