@@ -20,25 +20,19 @@ export const styles = StyleSheet.create({
     gap: 48,
   },
 
-  btnSignIn: {
+  btnContainer: {
     backgroundColor: colors.orange,
     color: colors.white,
 
-    paddingHorizontal: 12,
-    paddingVertical: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 32,
     borderRadius: 8,
 
     fontWeight: 600,
   },
 
-  btnSignUp: {
-    backgroundColor: colors.orange,
+  btnText: {
     color: colors.white,
-
-    paddingHorizontal: 12,
-    paddingVertical: 12,
-    borderRadius: 8,
-
     fontWeight: 600,
   },
 });

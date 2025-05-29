@@ -30,9 +30,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
 
-    fontWeight: 600,
-    color: colors.white,
     backgroundColor: colors.orange,
     borderRadius: 4,
+  },
+
+  btnTextSignIn: {
+    fontWeight: 600,
+    color: colors.white,
   },
 });

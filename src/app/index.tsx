@@ -1,5 +1,5 @@
 import { Link } from "expo-router";
-import { Image, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function Home() {
@@ -12,13 +12,15 @@ export default function Home() {
       />
       <View style={styles.wrapperActions}>
         <Link asChild href="/auth/sign-up">
-          <TouchableOpacity style={styles.btnSignUp}>
-            Cadastrar
+          <TouchableOpacity style={styles.btnContainer}>
+            <Text style={styles.btnText}>Cadastrar</Text>
           </TouchableOpacity>
         </Link>
 
         <Link asChild href="/auth/sign-in">
-          <TouchableOpacity style={styles.btnSignIn}>Entrar</TouchableOpacity>
+          <TouchableOpacity style={styles.btnContainer}>
+            <Text style={styles.btnText}>Entrar</Text>
+          </TouchableOpacity>
         </Link>
       </View>
     </View>
