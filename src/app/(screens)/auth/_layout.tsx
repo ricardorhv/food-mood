@@ -1,18 +1,31 @@
+import { colors } from "@/styles/colors";
 import { Stack } from "expo-router";
 
 export default function AuthLayout() {
   return (
-    <Stack initialRouteName="sign-in" screenOptions={{ headerShown: false }}>
+    <Stack>
       <Stack.Screen
-        name="sign-in"
+        name="sign-in/index"
         options={{
-          title: "Login",
+          title: "Acesse sua conta",
+          headerTitleAlign: "center",
+          headerTitleStyle: {
+            color: colors.orange,
+          },
+          headerTransparent: true,
+          headerTintColor: colors.orange,
         }}
       />
       <Stack.Screen
-        name="sign-up"
+        name="sign-up/index"
         options={{
           title: "Crie uma conta",
+          headerTitleAlign: "center",
+          headerTitleStyle: {
+            color: colors.orange,
+          },
+          headerTransparent: true,
+          headerTintColor: colors.orange,
         }}
       />
     </Stack>

@@ -1,17 +1,26 @@
 import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
+import { styles } from "./styles";
 
 export default function Home() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Home</Text>
-      <Link href="./main">Tela principal</Link>
+    <View style={styles.homeContainer}>
+      <Image
+        resizeMode="contain"
+        style={styles.logo}
+        source={require("@/assets/images/logo.png")}
+      />
+      <View style={styles.wrapperActions}>
+        <Link asChild href="/auth/sign-up">
+          <TouchableOpacity style={styles.btnSignUp}>
+            Cadastrar
+          </TouchableOpacity>
+        </Link>
+
+        <Link asChild href="/auth/sign-in">
+          <TouchableOpacity style={styles.btnSignIn}>Entrar</TouchableOpacity>
+        </Link>
+      </View>
     </View>
   );
 }
