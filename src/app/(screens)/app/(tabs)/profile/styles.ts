@@ -2,13 +2,26 @@ import { colors } from "@/styles/colors";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  signInContainer: {
+  wrapperContainer: {
     flex: 1,
+  },
+
+  wrapperImage: {
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 24,
+    marginVertical: 20,
+  },
+
+  img: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+  },
+
+  form: {
+    flex: 1,
     gap: 16,
-    backgroundColor: colors.white,
+    marginHorizontal: 20,
   },
 
   inputField: {
@@ -22,7 +35,18 @@ export const styles = StyleSheet.create({
     borderWidth: 0,
   },
 
-  btnSignIn: {
+  label: {
+    textTransform: "uppercase",
+    fontSize: 12,
+    fontWeight: "bold",
+    color: colors.orange,
+  },
+
+  labelInput: {
+    gap: 8,
+  },
+
+  btnUpdate: {
     width: "100%",
 
     padding: 14,
@@ -34,19 +58,8 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
   },
 
-  btnTextSignIn: {
+  btnTextUpdate: {
     fontWeight: 600,
     color: colors.white,
-  },
-
-  createAccount: {
-    alignItems: "flex-start",
-    width: "100%",
-  },
-
-  createAccountText: {
-    fontSize: 12,
-    color: colors.orange,
-    textDecorationLine: "underline",
   },
 });

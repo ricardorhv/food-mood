@@ -1,24 +1,40 @@
+import { colors } from "@/styles/colors";
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
-export default function TabLayout() {
+export default function TabsLayout() {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: colors.orange,
+      }}
+    >
       <Tabs.Screen
-        name="home/index"
+        name="home"
         options={{
           title: "Home",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="cart/index"
+        name="cart"
         options={{
           title: "Carrinho",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart-outline" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="profile/index"
+        name="profile"
         options={{
-          headerShown: false,
+          title: "Perfil",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

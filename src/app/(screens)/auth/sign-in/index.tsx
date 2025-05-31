@@ -11,6 +11,10 @@ export default function SignIn() {
 
   const router = useRouter();
 
+  function redirectToSingUp() {
+    router.push("/auth/sign-up");
+  }
+
   async function handleSignIn() {
     const { success, data, errors } = await signIn({
       email,
@@ -44,6 +48,10 @@ export default function SignIn() {
 
       <TouchableOpacity onPress={handleSignIn} style={styles.btnSignIn}>
         <Text style={styles.btnTextSignIn}>Entrar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={redirectToSingUp} style={styles.createAccount}>
+        <Text style={styles.createAccountText}>Crie sua conta!</Text>
       </TouchableOpacity>
     </View>
   );

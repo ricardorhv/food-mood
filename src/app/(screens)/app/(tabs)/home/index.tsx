@@ -8,14 +8,3 @@ export default function AppHome() {
     </View>
   );
 }
-
-/**
- * <Layout>
- *    <home>
- *    <app>
- *      <layout (tabs)>
- *    </app>
- *    <auth></auth>
- * </layout>
- *
- */

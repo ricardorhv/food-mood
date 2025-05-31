@@ -5,7 +5,7 @@ export default function ProfileLayout() {
   return (
     <Stack
       screenOptions={{
-        title: "Meus Dados",
+        title: "Carrinho",
         headerTintColor: colors.orange,
       }}
     >
