@@ -18,7 +18,7 @@ export default function SignIn() {
     });
 
     if (!success) {
-      Alert.alert("Erro ao criar uma conta, revise seus dados!");
+      Alert.alert("Dados inválidos, verifique novamente!");
       return;
     }
 
