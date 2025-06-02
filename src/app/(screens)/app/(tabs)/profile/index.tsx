@@ -1,7 +1,7 @@
 import { useAuth } from "@/hooks/useAuth";
-import { getUser } from "@/services/user";
+import { getUser, updateUser } from "@/services/user";
 import { useEffect, useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function ProfileScreen() {
@@ -22,12 +22,16 @@ export default function ProfileScreen() {
     setPassword(changedPassword);
   }
 
+  async function getUserId() {
+    const { getLoggedUser } = useAuth();
+    const userId = await getLoggedUser();
+
+    return userId;
+  }
+
   useEffect(() => {
     async function handleGetUser() {
-      const { getLoggedUser } = useAuth();
-      const userId = await getLoggedUser();
-      console.log(userId);
-
+      const userId = await getUserId();
       const { success, data: userData } = await getUser(userId);
 
       if (success) {
@@ -38,34 +42,77 @@ export default function ProfileScreen() {
     handleGetUser();
   }, []);
 
+  async function handleUpdateUser() {
+    const userId = await getUserId();
+    const hasChangedPassword = !!password.trim();
+
+    const updatedUser = {
+      name,
+      email,
+      phone,
+      password,
+    };
+
+    const { success, errors } = await updateUser(
+      userId,
+      hasChangedPassword
+        ? updatedUser
+        : {
+            name,
+            email,
+            phone,
+          }
+    );
+
+    if (!success) {
+      Alert.alert(errors as string);
+      return;
+    }
+
+    Alert.alert("Dados atualizados com sucesso!");
+  }
+
   return (
     <View style={styles.wrapperContainer}>
       <View style={styles.form}>
         <View style={styles.labelInput}>
           <Text style={styles.label}>Nome</Text>
-          <TextInput value={name} style={styles.inputField} />
+          <TextInput
+            onChangeText={setName}
+            value={name}
+            style={styles.inputField}
+          />
         </View>
 
         <View style={styles.labelInput}>
           <Text style={styles.label}>Telefone</Text>
-          <TextInput value={phone} style={styles.inputField} />
+          <TextInput
+            onChangeText={setPhone}
+            value={phone}
+            style={styles.inputField}
+          />
         </View>
 
         <View style={styles.labelInput}>
           <Text style={styles.label}>Email</Text>
-          <TextInput value={email} style={styles.inputField} />
+          <TextInput
+            onChangeText={setEmail}
+            value={email}
+            style={styles.inputField}
+          />
         </View>
 
         <View style={styles.labelInput}>
           <Text style={styles.label}>Senha</Text>
           <TextInput
+            onChangeText={setPassword}
             value={password}
             style={styles.inputField}
             secureTextEntry
           />
         </View>
 
-        <TouchableOpacity style={styles.btnUpdate}>
+        <TouchableOpacity onPress={handleUpdateUser} style={styles.btnUpdate}>
           <Text style={styles.btnTextUpdate}>Salvar</Text>
         </TouchableOpacity>
       </View>

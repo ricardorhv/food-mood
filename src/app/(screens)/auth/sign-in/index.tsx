@@ -16,13 +16,15 @@ export default function SignIn() {
   }
 
   async function handleSignIn() {
-    const { success, data, errors } = await signIn({
+    const { success, errors } = await signIn({
       email,
       password,
     });
 
     if (!success) {
-      Alert.alert("Dados inválidos, verifique novamente!");
+      Alert.alert(
+        errors ?? "Erro ao realizar login. Tente novamente mais tarde!"
+      );
       return;
     }
 

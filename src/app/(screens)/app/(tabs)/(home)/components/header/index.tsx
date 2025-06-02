@@ -1,6 +1,5 @@
 import { colors } from "@/styles/colors";
 import { Ionicons } from "@expo/vector-icons";
-import { Picker } from "@react-native-picker/picker";
 import { Text, TextInput, TouchableHighlight, View } from "react-native";
 import { styles } from "./styles";
 
@@ -10,11 +9,11 @@ export function Header() {
       <View style={styles.address}>
         <View style={styles.pickerAddressContainer}>
           <Ionicons size={18} style={styles.locationIcon} name="location" />
-          <Picker style={styles.addressPicker}>
+          {/* <Picker style={styles.addressPicker}>
             <Picker.Item style={styles.addressPickerItem} label="Casa" />
             <Picker.Item label="Trabalho" />
             <Picker.Item label="Vó" />
-          </Picker>
+          </Picker> */}
         </View>
 
         <Text style={styles.addressInfo}>

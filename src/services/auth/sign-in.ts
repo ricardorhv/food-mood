@@ -5,12 +5,12 @@ import { z } from "zod";
 
 const signInBodyRequestSchema = z.strictObject({
   password: z.string().nonempty({
-    message: "Campo obrigatório!",
+    message: "Senha obrigatório!",
   }),
   email: z
     .string()
     .nonempty({
-      message: "Campo obrigatório!",
+      message: "Email obrigatório!",
     })
     .email({
       message: "Email inválido!",
@@ -38,13 +38,15 @@ export async function signIn(
     console.log(error.format());
     return {
       success: false,
-      errors: error.format(),
+      errors:
+        error.format()?.email?._errors[0] ??
+        error.format()?.password?._errors[0],
     };
   }
 
   try {
     const { data } = await api.post<User>("/user/sign-in", user);
-    const { authenticate } = await useAuth();
+    const { authenticate } = useAuth();
 
     console.log(data);
 
@@ -59,13 +61,7 @@ export async function signIn(
 
     return {
       success: false,
-      errors: [
-        {
-          email: {
-            message: message,
-          },
-        },
-      ],
+      errors: message,
     };
   }
 }
