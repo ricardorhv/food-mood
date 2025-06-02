@@ -1,4 +1,6 @@
+import { useAuth } from "@/hooks/useAuth";
 import { api } from "@/lib/axios";
+import { User } from "@/types/user";
 import { z } from "zod";
 
 const signInBodyRequestSchema = z.strictObject({
@@ -41,8 +43,12 @@ export async function signIn(
   }
 
   try {
-    const { data } = await api.post("/user/sign-in", user);
+    const { data } = await api.post<User>("/user/sign-in", user);
+    const { authenticate } = await useAuth();
+
     console.log(data);
+
+    authenticate(data.id);
 
     return {
       success: true,

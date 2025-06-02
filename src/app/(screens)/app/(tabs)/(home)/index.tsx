@@ -1,6 +1,6 @@
 import { FlatList, View } from "react-native";
-import { HeaderHome } from "../../components/header-home";
-import { ProductCard } from "../../components/product-card";
+import { Header } from "./components/header";
+import { ProductCard } from "./components/product-card";
 import { styles } from "./styles";
 
 const data = [
@@ -36,7 +36,7 @@ const data = [
 export default function Home() {
   return (
     <View style={styles.container}>
-      <HeaderHome />
+      <Header />
       <FlatList
         data={data}
         contentContainerStyle={styles.productListContainer}

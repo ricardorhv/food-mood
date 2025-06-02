@@ -1,7 +1,8 @@
+import { signIn } from "@/services/auth/sign-in";
 import { colors } from "@/styles/colors";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function SignIn() {
@@ -15,15 +16,15 @@ export default function SignIn() {
   }
 
   async function handleSignIn() {
-    // const { success, data, errors } = await signIn({
-    //   email,
-    //   password,
-    // });
+    const { success, data, errors } = await signIn({
+      email,
+      password,
+    });
 
-    // if (!success) {
-    //   Alert.alert("Dados inválidos, verifique novamente!");
-    //   return;
-    // }
+    if (!success) {
+      Alert.alert("Dados inválidos, verifique novamente!");
+      return;
+    }
 
     router.dismissTo("/app");
   }
@@ -50,7 +51,7 @@ export default function SignIn() {
       </TouchableOpacity>
 
       <TouchableOpacity onPress={redirectToSingUp} style={styles.createAccount}>
-        <Text style={styles.createAccountText}>Crie sua conta!</Text>
+        <Text style={styles.createAccountText}>Crie sua conta</Text>
       </TouchableOpacity>
     </View>
   );

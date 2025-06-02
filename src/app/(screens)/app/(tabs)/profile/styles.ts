@@ -4,12 +4,10 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   wrapperContainer: {
     flex: 1,
-  },
-
-  wrapperImage: {
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 20,
+
+    paddingHorizontal: 24,
   },
 
   img: {
@@ -19,7 +17,7 @@ export const styles = StyleSheet.create({
   },
 
   form: {
-    flex: 1,
+    width: "100%",
     gap: 16,
     marginHorizontal: 20,
   },
@@ -36,7 +34,6 @@ export const styles = StyleSheet.create({
   },
 
   label: {
-    textTransform: "uppercase",
     fontSize: 12,
     fontWeight: "bold",
     color: colors.orange,

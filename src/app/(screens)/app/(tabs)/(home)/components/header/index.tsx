@@ -4,7 +4,7 @@ import { Picker } from "@react-native-picker/picker";
 import { Text, TextInput, TouchableHighlight, View } from "react-native";
 import { styles } from "./styles";
 
-export function HeaderHome() {
+export function Header() {
   return (
     <View style={styles.header}>
       <View style={styles.address}>
