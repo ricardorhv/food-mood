@@ -42,9 +42,10 @@ export default function Home() {
         contentContainerStyle={styles.productListContainer}
         showsVerticalScrollIndicator={false}
         renderItem={({
-          item: { image, category, name, preparationTime, price },
+          item: { id, image, category, name, preparationTime, price },
         }) => (
           <ProductCard
+            id={id}
             name={name}
             categoryName={category}
             price={price}
