@@ -1,7 +1,8 @@
+import { signUp } from "@/services/auth/sign-up";
 import { colors } from "@/styles/colors";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function SignUp() {
@@ -13,12 +14,12 @@ export default function SignUp() {
   const router = useRouter();
 
   async function handleSignUp() {
-    // const { success } = await signUp({ name, email, phone, password });
+    const { success } = await signUp({ name, email, phone, password });
 
-    // if (!success) {
-    //   Alert.alert("Erro ao criar uma conta, revise seus dados!");
-    //   return;
-    // }
+    if (!success) {
+      Alert.alert("Erro ao criar uma conta, revise seus dados!");
+      return;
+    }
 
     router.dismissTo("/auth/sign-in");
   }

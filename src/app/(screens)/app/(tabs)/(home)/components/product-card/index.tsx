@@ -43,6 +43,9 @@ export function ProductCard({
           source={{
             uri: imageUrl,
           }}
+          defaultSource={{
+            uri: "https://openlab.sps.cuny.edu/omvss/wp-content/themes/koji/assets/images/default-fallback-image.png",
+          }}
           style={styles.productImage}
         />
 

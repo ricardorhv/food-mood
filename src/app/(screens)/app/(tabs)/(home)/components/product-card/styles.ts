@@ -23,6 +23,8 @@ export const styles = StyleSheet.create({
     left: "50%",
     top: -20,
     transform: "translateX(-50%)",
+
+    boxShadow: "0px 0px 10px #00000020",
   },
 
   productImage: {
@@ -32,7 +34,8 @@ export const styles = StyleSheet.create({
 
   productInfoContainer: {
     backgroundColor: colors.white,
-    padding: 8,
+    paddingVertical: 16,
+    paddingHorizontal: 8,
     gap: 4,
   },
 

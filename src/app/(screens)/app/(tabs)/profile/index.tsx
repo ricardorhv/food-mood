@@ -1,5 +1,5 @@
 import { useAuth } from "@/hooks/useAuth";
-import { getUser, updateUser } from "@/services/user";
+import { getUser, updateUser } from "@/services/user/user-service";
 import { useEffect, useState } from "react";
 import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
