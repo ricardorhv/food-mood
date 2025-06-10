@@ -28,11 +28,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 8,
 
-    fontWeight: 600,
+    fontFamily: "Poppins_600SemiBold",
   },
 
   btnText: {
     color: colors.white,
-    fontWeight: 600,
+    fontFamily: "Poppins_600SemiBold",
   },
 });

@@ -24,18 +24,21 @@ export const styles = StyleSheet.create({
 
   inputField: {
     backgroundColor: colors["gray-100"],
-    padding: 14,
+    padding: 12,
     borderRadius: 4,
     width: "100%",
     color: colors["gray-900"],
     outlineWidth: 1,
     outlineColor: colors.orange,
     borderWidth: 0,
+
+    fontFamily: "Poppins_400Regular",
+    fontSize: 12,
   },
 
   label: {
     fontSize: 12,
-    fontWeight: "bold",
+    fontFamily: "Poppins_700Bold",
     color: colors.orange,
   },
 
@@ -56,7 +59,8 @@ export const styles = StyleSheet.create({
   },
 
   btnTextUpdate: {
-    fontWeight: 600,
     color: colors.white,
+
+    fontFamily: "Poppins_600SemiBold",
   },
 });

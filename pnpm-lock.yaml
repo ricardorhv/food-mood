@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@expo-google-fonts/poppins':
+        specifier: ^0.4.0
+        version: 0.4.0
       '@expo/metro-config':
         specifier: ^0.20.14
         version: 0.20.14
@@ -57,8 +60,8 @@ importers:
         specifier: ~5.0.6
         version: 5.0.7(e5aa79fc6e6598a9890e6ad561d03d54)
       expo-splash-screen:
-        specifier: ~0.30.8
-        version: 0.30.8(expo@53.0.9(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))
+        specifier: ~0.30.9
+        version: 0.30.9(expo@53.0.9(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))
       expo-status-bar:
         specifier: ~2.2.3
         version: 2.2.3(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
@@ -675,6 +678,9 @@ packages:
   '@eslint/plugin-kit@0.3.1':
     resolution: {integrity: sha512-0J+zgWxHN+xXONWIyPWKFMgVuJoZuGiIFu8yxk7RJjxkzpGmyja5wRFqZIVtjDVOQpV+Rw0iOAjYPE2eQyjr0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@expo-google-fonts/poppins@0.4.0':
+    resolution: {integrity: sha512-mY+z56ai1p01EltWCPEDc2EZR+yq7qAMpgDa+SP16j3vwETOLG3pl+W74oUhZayHw0uYdQjTXkm4ZO4QvX1I7w==}
 
   '@expo/cli@0.24.13':
     resolution: {integrity: sha512-2LSdbvYs+WmUljnplQXMCUyNzyX4H+F4l8uExfA1hud25Bl5kyaGrx1jjtgNxMTXmfmMjvgBdK798R50imEhkA==}
@@ -2037,8 +2043,8 @@ packages:
       react-native-reanimated:
         optional: true
 
-  expo-splash-screen@0.30.8:
-    resolution: {integrity: sha512-2eh+uA543brfeG5HILXmtNKA7E2/pfywKzNumzy3Ef6OtDjYy6zJUGNSbhnZRbVEjUZo3/QNRs0JRBfY80okZg==}
+  expo-splash-screen@0.30.9:
+    resolution: {integrity: sha512-curHUaZxUTZ2dWvz32ao3xPv5mJr1LBqn5V8xm/IULAehB9RGCn8iKiROMN1PYebSG+56vPMuJmBm9P+ayvJpA==}
     peerDependencies:
       expo: '*'
 
@@ -4643,6 +4649,8 @@ snapshots:
       '@eslint/core': 0.14.0
       levn: 0.4.1
 
+  '@expo-google-fonts/poppins@0.4.0': {}
+
   '@expo/cli@0.24.13':
     dependencies:
       '@0no-co/graphql.web': 1.1.2
@@ -6505,7 +6513,7 @@ snapshots:
       - react-native
       - supports-color
 
-  expo-splash-screen@0.30.8(expo@53.0.9(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)):
+  expo-splash-screen@0.30.9(expo@53.0.9(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)):
     dependencies:
       '@expo/prebuild-config': 9.0.6
       expo: 53.0.9(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.2(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)

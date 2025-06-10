@@ -13,13 +13,16 @@ export const styles = StyleSheet.create({
 
   inputField: {
     backgroundColor: colors["gray-100"],
-    padding: 14,
+    padding: 12,
     borderRadius: 4,
     width: "100%",
     color: colors["gray-900"],
     outlineWidth: 1,
     outlineColor: colors.orange,
     borderWidth: 0,
+
+    fontFamily: "Poppins_400Regular",
+    fontSize: 12,
   },
 
   btnSignUp: {
@@ -35,7 +38,7 @@ export const styles = StyleSheet.create({
   },
 
   btnTextSignUp: {
-    fontWeight: 600,
+    fontFamily: "Poppins_600SemiBold",
     color: colors.white,
   },
 });

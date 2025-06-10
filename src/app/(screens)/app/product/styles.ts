@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
 
   name: {
     fontSize: 18,
-    fontWeight: 700,
+    fontFamily: "Poppins_700Bold",
 
     color: colors["orange"],
   },
@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
   description: {
     fontSize: 12,
     color: colors["gray-400"],
-    fontWeight: 300,
+    fontFamily: "Poppins_300Light",
 
     textAlign: "justify",
   },
@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
 
   category: {
     fontSize: 12,
-    fontWeight: 300,
+    fontFamily: "Poppins_300Light",
 
     color: colors["gray-900"],
   },
@@ -68,14 +68,14 @@ export const styles = StyleSheet.create({
 
   preparionTimeText: {
     fontSize: 12,
-    fontWeight: 300,
+    fontFamily: "Poppins_300Light",
 
     color: colors["gray-900"],
   },
 
   price: {
     fontSize: 16,
-    fontWeight: 700,
+    fontFamily: "Poppins_700Bold",
 
     color: colors["gray-900"],
 

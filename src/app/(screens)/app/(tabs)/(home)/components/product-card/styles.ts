@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
 
   productName: {
     fontSize: 18,
-    fontWeight: "700",
+    fontFamily: "Poppins_700Bold",
 
     color: colors.orange,
   },
@@ -58,14 +58,14 @@ export const styles = StyleSheet.create({
     flexShrink: 0,
 
     fontSize: 14,
-    fontWeight: 700,
+    fontFamily: "Poppins_700Bold",
 
     color: colors["gray-900"],
   },
 
   productCategory: {
     fontSize: 12,
-    fontWeight: 300,
+    fontFamily: "Poppins_300Light",
 
     color: colors["gray-900"],
   },
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
 
   productPreparionTimeText: {
     fontSize: 12,
-    fontWeight: 300,
+    fontFamily: "Poppins_300Light",
 
     color: colors["gray-900"],
   },

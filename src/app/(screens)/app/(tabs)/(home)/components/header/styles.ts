@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   },
 
   addressInfo: {
+    fontFamily: "Poppins_400Regular",
     fontSize: 12,
     color: colors["gray-400"],
   },
@@ -31,7 +32,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "transparent",
     outlineWidth: 0,
     borderWidth: 0,
-    fontWeight: 700,
+    fontFamily: "Poppins_700Bold",
     color: colors["gray-900"],
     fontSize: 18,
   },
@@ -49,6 +50,8 @@ export const styles = StyleSheet.create({
 
     fontSize: 12,
     borderRadius: 4,
+
+    fontFamily: "Poppins_400Regular",
 
     outlineWidth: 1,
     outlineColor: colors.orange,
