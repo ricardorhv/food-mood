@@ -6,7 +6,8 @@ import {
   Poppins_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
-import { SplashScreen, Stack } from "expo-router";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { StatusBar } from "react-native";
 
@@ -22,9 +23,13 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync();
+    async function wait() {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      if (loaded || error) {
+        SplashScreen.hideAsync();
+      }
     }
+    wait();
   }, [loaded, error]);
 
   if (!loaded && !error) {

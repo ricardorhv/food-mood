@@ -34,14 +34,14 @@ export default function SignIn() {
   return (
     <View style={styles.signInContainer}>
       <TextInput
-        placeholderTextColor={colors["gray-400"]}
+        placeholderTextColor={colors["gray-600"]}
         style={styles.inputField}
         placeholder="Email"
         keyboardType="email-address"
         onChangeText={setEmail}
       />
       <TextInput
-        placeholderTextColor={colors["gray-400"]}
+        placeholderTextColor={colors["gray-600"]}
         style={styles.inputField}
         placeholder="Senha"
         secureTextEntry={true}

@@ -10,11 +10,11 @@ export default function AuthLayout() {
           title: "Acesse sua conta",
           headerTitleAlign: "center",
           headerTitleStyle: {
-            color: colors.orange,
+            color: colors.primary,
             fontFamily: "Poppins_500Medium",
           },
           headerTransparent: true,
-          headerTintColor: colors.orange,
+          headerTintColor: colors.primary,
         }}
       />
       <Stack.Screen
@@ -23,11 +23,11 @@ export default function AuthLayout() {
           title: "Crie uma conta",
           headerTitleAlign: "center",
           headerTitleStyle: {
-            color: colors.orange,
+            color: colors.primary,
             fontFamily: "Poppins_500Medium",
           },
           headerTransparent: true,
-          headerTintColor: colors.orange,
+          headerTintColor: colors.primary,
         }}
       />
     </Stack>

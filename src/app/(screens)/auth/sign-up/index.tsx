@@ -27,27 +27,27 @@ export default function SignUp() {
   return (
     <View style={styles.signUpContainer}>
       <TextInput
-        placeholderTextColor={colors["gray-400"]}
+        placeholderTextColor={colors["gray-600"]}
         style={styles.inputField}
         placeholder="Nome"
         onChangeText={setName}
       />
       <TextInput
-        placeholderTextColor={colors["gray-400"]}
+        placeholderTextColor={colors["gray-600"]}
         style={styles.inputField}
         placeholder="Email"
         keyboardType="email-address"
         onChangeText={setEmail}
       />
       <TextInput
-        placeholderTextColor={colors["gray-400"]}
+        placeholderTextColor={colors["gray-600"]}
         style={styles.inputField}
         placeholder="Telefone"
         keyboardType="numeric"
         onChangeText={setPhone}
       />
       <TextInput
-        placeholderTextColor={colors["gray-400"]}
+        placeholderTextColor={colors["gray-600"]}
         style={styles.inputField}
         placeholder="Senha"
         secureTextEntry={true}

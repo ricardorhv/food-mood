@@ -8,17 +8,17 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 24,
     gap: 16,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
   },
 
   inputField: {
-    backgroundColor: colors["gray-100"],
+    backgroundColor: colors["gray-700"],
     padding: 12,
     borderRadius: 4,
     width: "100%",
-    color: colors["gray-900"],
-    outlineWidth: 1,
-    outlineColor: colors.orange,
+    color: colors["gray-400"],
+    // outlineWidth: 1,
+    // outlineColor: colors.primary,
     borderWidth: 0,
 
     fontFamily: "Poppins_400Regular",
@@ -29,16 +29,17 @@ export const styles = StyleSheet.create({
     width: "100%",
 
     padding: 14,
+    marginTop: 20,
 
     alignItems: "center",
     justifyContent: "center",
 
-    backgroundColor: colors.orange,
+    backgroundColor: colors.primary,
     borderRadius: 4,
   },
 
   btnTextSignUp: {
     fontFamily: "Poppins_600SemiBold",
-    color: colors.white,
+    color: colors.secondary,
   },
 });

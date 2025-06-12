@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   homeContainer: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
     flex: 1,
     alignItems: "center",
     paddingTop: 100,
@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 250,
-    height: 250,
+    width: 300,
+    height: 300,
   },
 
   wrapperActions: {
@@ -21,18 +21,17 @@ export const styles = StyleSheet.create({
   },
 
   btnContainer: {
-    backgroundColor: colors.orange,
-    color: colors.white,
+    backgroundColor: colors.primary,
 
     paddingVertical: 14,
     paddingHorizontal: 32,
-    borderRadius: 8,
+    borderRadius: 4,
 
     fontFamily: "Poppins_600SemiBold",
   },
 
   btnText: {
-    color: colors.white,
+    color: colors.background,
     fontFamily: "Poppins_600SemiBold",
   },
 });
