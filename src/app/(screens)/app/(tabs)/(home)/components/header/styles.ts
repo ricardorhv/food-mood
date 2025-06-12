@@ -4,8 +4,11 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   header: {
     paddingVertical: 20,
+    paddingHorizontal: 24,
     alignItems: "center",
     gap: 22,
+
+    backgroundColor: colors.background,
   },
 
   address: {
@@ -15,7 +18,7 @@ export const styles = StyleSheet.create({
   addressInfo: {
     fontFamily: "Poppins_400Regular",
     fontSize: 12,
-    color: colors["gray-400"],
+    color: colors["gray-200"],
   },
 
   pickerAddressContainer: {
@@ -25,7 +28,7 @@ export const styles = StyleSheet.create({
   },
 
   locationIcon: {
-    color: colors.orange,
+    color: colors.primary,
   },
 
   addressPicker: {
@@ -33,7 +36,7 @@ export const styles = StyleSheet.create({
     outlineWidth: 0,
     borderWidth: 0,
     fontFamily: "Poppins_700Bold",
-    color: colors["gray-900"],
+    color: colors.primary,
     fontSize: 18,
   },
 
@@ -45,7 +48,7 @@ export const styles = StyleSheet.create({
   foodFilterInput: {
     width: "100%",
     padding: 12,
-    backgroundColor: colors.white,
+    backgroundColor: colors["gray-700"],
     boxShadow: "0px 0px 10px #00000010",
 
     fontSize: 12,
@@ -54,7 +57,7 @@ export const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
 
     outlineWidth: 1,
-    outlineColor: colors.orange,
+    outlineColor: colors.primary,
     borderWidth: 0,
   },
 
@@ -69,7 +72,10 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
 
     padding: 10,
-    backgroundColor: colors.white,
+    backgroundColor: colors["gray-700"],
     boxShadow: "0px 0px 10px #00000010",
+
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

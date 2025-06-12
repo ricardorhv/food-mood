@@ -74,7 +74,7 @@ export function ProductCard({
               <Ionicons
                 name="time-outline"
                 size={16}
-                color={colors["gray-900"]}
+                color={colors["gray-200"]}
               />
               <Text style={styles.productPreparionTimeText}>
                 {preparationTimeText}

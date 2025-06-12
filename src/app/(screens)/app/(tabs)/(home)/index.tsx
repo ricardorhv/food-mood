@@ -22,35 +22,37 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Header />
-      {!isProductsEmpty ? (
-        <FlatList
-          data={products}
-          contentContainerStyle={styles.productListContainer}
-          showsVerticalScrollIndicator={false}
-          renderItem={({
-            item: {
-              id,
-              image,
-              category: { name: categoryName },
-              name,
-              preparationTime,
-              price,
-            },
-          }) => (
-            <ProductCard
-              id={id}
-              name={name}
-              categoryName={categoryName}
-              price={price}
-              preparationTime={preparationTime}
-              imageUrl={image}
-            />
-          )}
-          keyExtractor={(product) => product.id}
-        />
-      ) : (
-        <LoadingIndicator size="large" />
-      )}
+      <View style={styles.wrapper}>
+        {!isProductsEmpty ? (
+          <FlatList
+            data={products}
+            contentContainerStyle={styles.productListContainer}
+            showsVerticalScrollIndicator={false}
+            renderItem={({
+              item: {
+                id,
+                image,
+                category: { name: categoryName },
+                name,
+                preparationTime,
+                price,
+              },
+            }) => (
+              <ProductCard
+                id={id}
+                name={name}
+                categoryName={categoryName}
+                price={price}
+                preparationTime={preparationTime}
+                imageUrl={image}
+              />
+            )}
+            keyExtractor={(product) => product.id}
+          />
+        ) : (
+          <LoadingIndicator size="large" />
+        )}
+      </View>
     </View>
   );
 }

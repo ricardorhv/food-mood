@@ -6,9 +6,11 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        // headerShown: false,
-        tabBarActiveTintColor: colors.orange,
+        tabBarActiveTintColor: colors.primary,
         tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: colors["gray-700"],
+        },
       }}
     >
       <Tabs.Screen
@@ -25,7 +27,7 @@ export default function TabsLayout() {
         options={{
           title: "Carrinho",
           headerTitleStyle: {
-            color: colors.orange,
+            color: colors.primary,
             fontFamily: "Poppins_500Medium",
           },
           headerTransparent: true,
@@ -39,7 +41,7 @@ export default function TabsLayout() {
         options={{
           title: "Meus dados",
           headerTitleStyle: {
-            color: colors.orange,
+            color: colors.primary,
             fontFamily: "Poppins_500Medium",
           },
           headerTransparent: true,

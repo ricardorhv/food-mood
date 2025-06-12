@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.background,
   },
 
   image: {
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
     inset: 0,
 
     flex: 1,
-    backgroundColor: colors["gray-900"],
+    backgroundColor: colors["gray-700"],
     opacity: 0.4,
   },
 
@@ -34,7 +35,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "Poppins_700Bold",
 
-    color: colors["orange"],
+    color: colors.primary,
   },
 
   description: {
@@ -57,7 +58,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "Poppins_300Light",
 
-    color: colors["gray-900"],
+    color: colors["gray-400"],
   },
 
   preparionTimeContainer: {
@@ -70,14 +71,14 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "Poppins_300Light",
 
-    color: colors["gray-900"],
+    color: colors["gray-400"],
   },
 
   price: {
     fontSize: 16,
     fontFamily: "Poppins_700Bold",
 
-    color: colors["gray-900"],
+    color: colors["gray-200"],
 
     alignSelf: "flex-end",
     marginTop: 20,

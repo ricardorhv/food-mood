@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
 
     paddingHorizontal: 24,
+    backgroundColor: colors.background,
   },
 
   img: {
@@ -23,13 +24,13 @@ export const styles = StyleSheet.create({
   },
 
   inputField: {
-    backgroundColor: colors["gray-100"],
+    backgroundColor: colors["gray-700"],
     padding: 12,
     borderRadius: 4,
     width: "100%",
-    color: colors["gray-900"],
+    color: colors["gray-400"],
     outlineWidth: 1,
-    outlineColor: colors.orange,
+    outlineColor: colors.primary,
     borderWidth: 0,
 
     fontFamily: "Poppins_400Regular",
@@ -39,7 +40,7 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 12,
     fontFamily: "Poppins_700Bold",
-    color: colors.orange,
+    color: colors.primary,
   },
 
   labelInput: {
@@ -48,18 +49,19 @@ export const styles = StyleSheet.create({
 
   btnUpdate: {
     width: "100%",
+    marginTop: 20,
 
     padding: 14,
 
     alignItems: "center",
     justifyContent: "center",
 
-    backgroundColor: colors.orange,
+    backgroundColor: colors.primary,
     borderRadius: 4,
   },
 
   btnTextUpdate: {
-    color: colors.white,
+    color: colors.secondary,
 
     fontFamily: "Poppins_600SemiBold",
   },

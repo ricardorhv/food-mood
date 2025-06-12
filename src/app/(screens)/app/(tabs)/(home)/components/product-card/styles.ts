@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
 
-    backgroundColor: colors.orange,
+    backgroundColor: colors.primary,
 
     position: "absolute",
     left: "50%",
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
 
   productInfoContainer: {
-    backgroundColor: colors.white,
+    backgroundColor: colors["gray-700"],
     paddingVertical: 16,
     paddingHorizontal: 8,
     gap: 4,
@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "Poppins_700Bold",
 
-    color: colors.orange,
+    color: colors.primary,
   },
 
   productPrice: {
@@ -60,14 +60,14 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "Poppins_700Bold",
 
-    color: colors["gray-900"],
+    color: colors["gray-200"],
   },
 
   productCategory: {
     fontSize: 12,
     fontFamily: "Poppins_300Light",
 
-    color: colors["gray-900"],
+    color: colors["gray-200"],
   },
 
   productPreparionTimeContainer: {
@@ -80,6 +80,6 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "Poppins_300Light",
 
-    color: colors["gray-900"],
+    color: colors["gray-400"],
   },
 });

@@ -27,10 +27,10 @@ export default function ProductDetails() {
           headerShown: true,
           headerTitle: "",
           headerTitleStyle: {
-            color: colors.orange,
+            color: colors.primary,
           },
           headerTransparent: true,
-          headerTintColor: colors.orange,
+          headerTintColor: colors.primary,
         }}
       />
       {product ? (
@@ -58,7 +58,7 @@ export default function ProductDetails() {
                 <Ionicons
                   name="time-outline"
                   size={16}
-                  color={colors["gray-900"]}
+                  color={colors["gray-400"]}
                 />
                 <Text style={styles.preparionTimeText}>
                   {formatPreparationTime(product.preparationTime!)}
