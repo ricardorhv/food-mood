@@ -1,23 +1,14 @@
 import { LoadingIndicator } from "@/app/components/loading-indicator";
-import { getProducts } from "@/services/product/product-service";
-import { Product } from "@/types/product";
-import { useEffect, useState } from "react";
+import { useProductContext } from "@/context/product-context";
 import { FlatList, View } from "react-native";
+import { EmptyProductList } from "./components/empty-product-list";
 import { Header } from "./components/header";
 import { ProductCard } from "./components/product-card";
 import { styles } from "./styles";
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const { products, filteredProducts, isFilteringByName } = useProductContext();
   const isProductsEmpty = products.length === 0;
-
-  useEffect(() => {
-    async function handleGetProducts() {
-      const productList = (await getProducts()).data;
-      setProducts(productList ?? []);
-    }
-    handleGetProducts();
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -25,9 +16,10 @@ export default function Home() {
       <View style={styles.wrapper}>
         {!isProductsEmpty ? (
           <FlatList
-            data={products}
+            data={isFilteringByName ? filteredProducts : products}
             contentContainerStyle={styles.productListContainer}
             showsVerticalScrollIndicator={false}
+            ListEmptyComponent={EmptyProductList}
             renderItem={({
               item: {
                 id,

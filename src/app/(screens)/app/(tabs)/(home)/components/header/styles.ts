@@ -11,45 +11,13 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
-  address: {
-    alignItems: "center",
-  },
-
-  addressInfo: {
-    fontFamily: "Poppins_400Regular",
-    fontSize: 12,
-    color: colors["gray-200"],
-  },
-
-  pickerAddressContainer: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: 2,
-  },
-
-  locationIcon: {
-    color: colors.primary,
-  },
-
-  addressPicker: {
-    backgroundColor: "transparent",
-    outlineWidth: 0,
-    borderWidth: 0,
-    fontFamily: "Poppins_700Bold",
-    color: colors.primary,
-    fontSize: 18,
-  },
-
-  addressPickerItem: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-  },
-
   foodFilterInput: {
     width: "100%",
     padding: 12,
     backgroundColor: colors["gray-700"],
     boxShadow: "0px 0px 10px #00000010",
+
+    color: colors["gray-400"],
 
     fontSize: 12,
     borderRadius: 4,
@@ -66,16 +34,5 @@ export const styles = StyleSheet.create({
     gap: 20,
     alignItems: "stretch",
     width: "100%",
-  },
-
-  foodFilterOptions: {
-    borderRadius: 4,
-
-    padding: 10,
-    backgroundColor: colors["gray-700"],
-    boxShadow: "0px 0px 10px #00000010",
-
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
