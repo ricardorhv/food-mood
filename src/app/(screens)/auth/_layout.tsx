@@ -11,7 +11,8 @@ export default function AuthLayout() {
           headerTitleAlign: "center",
           headerTitleStyle: {
             color: colors.primary,
-            fontFamily: "Poppins_500Medium",
+            fontFamily: "Poppins_600Semibold",
+            fontSize: 22,
           },
           headerTransparent: true,
           headerTintColor: colors.primary,
@@ -24,7 +25,8 @@ export default function AuthLayout() {
           headerTitleAlign: "center",
           headerTitleStyle: {
             color: colors.primary,
-            fontFamily: "Poppins_500Medium",
+            fontFamily: "Poppins_600Semibold",
+            fontSize: 22,
           },
           headerTransparent: true,
           headerTintColor: colors.primary,

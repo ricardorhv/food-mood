@@ -6,6 +6,8 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     overflow: "hidden",
     boxShadow: "0px 0px 10px #00000015",
+
+    width: "100%",
   },
 
   addProductToMinicartBtn: {
@@ -21,8 +23,9 @@ export const styles = StyleSheet.create({
 
     position: "absolute",
     left: "50%",
-    top: -20,
     transform: "translateX(-50%)",
+    bottom: 70,
+    zIndex: 2,
 
     boxShadow: "0px 0px 10px #00000020",
   },

@@ -4,14 +4,76 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 24,
+    backgroundColor: colors.background,
   },
+
+  emptyCartContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
   emptyCartText: {
     fontSize: 16,
-    fontWeight: 500,
+    fontFamily: "Poppins_500Medium",
     color: colors["gray-400"],
     textAlign: "center",
+
+    padding: 24,
+  },
+
+  productListContainer: {
+    marginTop: 50,
+    width: "100%",
+
+    padding: 24,
+    gap: 20,
+  },
+
+  cartSummary: {
+    backgroundColor: colors.primary,
+
+    padding: 24,
+
+    marginTop: "auto",
+    gap: 20,
+  },
+
+  rowContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
+  totalText: {
+    fontFamily: "Poppins_700Bold",
+    fontSize: 16,
+
+    color: colors.white,
+  },
+
+  valueText: {
+    fontFamily: "Poppins_500Medium",
+    fontSize: 16,
+
+    color: colors.white,
+  },
+
+  completeOrderBtn: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+
+    padding: 8,
+
+    backgroundColor: colors.white,
+    borderRadius: 4,
+  },
+
+  completeOrderText: {
+    fontFamily: "Poppins_500Medium",
+    fontSize: 16,
+
+    color: colors.primary,
   },
 });

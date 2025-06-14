@@ -1,5 +1,7 @@
+import { useCart } from "@/hooks/useCart";
 import { colors } from "@/styles/colors";
 import { formatPreparationTime } from "@/utils/format-preparation-time";
+import { formatPrice } from "@/utils/format-price";
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
@@ -22,67 +24,79 @@ export function ProductCard({
   preparationTime,
   price,
 }: ProductCardProps) {
+  const { updateProductsCart, getProductsCart } = useCart();
   const preparationTimeText = formatPreparationTime(preparationTime);
 
-  function handleAddProductToCart() {
+  async function handleAddProductToCart() {
     console.log(`${name} adicionado no carrinho`);
+    const productsCart = await getProductsCart();
+
+    const product = {
+      id,
+      name,
+      categoryName,
+      imageUrl,
+      preparationTime,
+      price,
+    };
+
+    // productsCart.push()
+
+    // updateProductsCart()
   }
 
   return (
-    <Link
-      href={{
-        pathname: "/app/product/[id]",
-        params: {
-          id,
-        },
-      }}
-      asChild
-    >
-      <View style={styles.container}>
-        <Image
-          source={{
-            uri: imageUrl,
-          }}
-          defaultSource={{
-            uri: "https://openlab.sps.cuny.edu/omvss/wp-content/themes/koji/assets/images/default-fallback-image.png",
-          }}
-          style={styles.productImage}
-        />
+    <View>
+      <TouchableOpacity
+        onPress={handleAddProductToCart}
+        style={styles.addProductToMinicartBtn}
+      >
+        <Ionicons name="add-outline" size={25} color={colors.white} />
+      </TouchableOpacity>
 
-        <View style={styles.productInfoContainer}>
-          <TouchableOpacity
-            onPress={handleAddProductToCart}
-            style={styles.addProductToMinicartBtn}
-          >
-            <Ionicons name="add-outline" size={25} color={colors.white} />
-          </TouchableOpacity>
+      <Link
+        href={{
+          pathname: "/app/product/[id]",
+          params: {
+            id,
+          },
+        }}
+        asChild
+      >
+        <View style={styles.container}>
+          <Image
+            source={{
+              uri: imageUrl,
+            }}
+            defaultSource={{
+              uri: "https://openlab.sps.cuny.edu/omvss/wp-content/themes/koji/assets/images/default-fallback-image.png",
+            }}
+            style={styles.productImage}
+          />
 
-          <View style={styles.productDataContainer}>
-            <Text style={styles.productName}>{name}</Text>
-            <Text style={styles.productPrice}>
-              {Number(price.toFixed(2)).toLocaleString("pt-BR", {
-                currency: "BRL",
-                style: "currency",
-              })}
-            </Text>
-          </View>
+          <View style={styles.productInfoContainer}>
+            <View style={styles.productDataContainer}>
+              <Text style={styles.productName}>{name}</Text>
+              <Text style={styles.productPrice}>{formatPrice(price)}</Text>
+            </View>
 
-          <View style={styles.productDataContainer}>
-            <Text style={styles.productCategory}>{categoryName}</Text>
+            <View style={styles.productDataContainer}>
+              <Text style={styles.productCategory}>{categoryName}</Text>
 
-            <View style={styles.productPreparionTimeContainer}>
-              <Ionicons
-                name="time-outline"
-                size={16}
-                color={colors["gray-200"]}
-              />
-              <Text style={styles.productPreparionTimeText}>
-                {preparationTimeText}
-              </Text>
+              <View style={styles.productPreparionTimeContainer}>
+                <Ionicons
+                  name="time-outline"
+                  size={16}
+                  color={colors["gray-200"]}
+                />
+                <Text style={styles.productPreparionTimeText}>
+                  {preparationTimeText}
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-      </View>
-    </Link>
+      </Link>
+    </View>
   );
 }

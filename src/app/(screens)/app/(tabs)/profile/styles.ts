@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
 
   label: {
     fontSize: 12,
-    fontFamily: "Poppins_700Bold",
+    fontFamily: "Poppins_400Regular",
     color: colors.primary,
   },
 

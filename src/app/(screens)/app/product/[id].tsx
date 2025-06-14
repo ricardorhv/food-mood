@@ -3,6 +3,7 @@ import { getProductById } from "@/services/product/product-service";
 import { colors } from "@/styles/colors";
 import { Product } from "@/types/product";
 import { formatPreparationTime } from "@/utils/format-preparation-time";
+import { formatPrice } from "@/utils/format-price";
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
@@ -66,12 +67,7 @@ export default function ProductDetails() {
               </View>
             </View>
 
-            <Text style={styles.price}>
-              {product.price.toLocaleString("pt-BR", {
-                currency: "BRL",
-                style: "currency",
-              })}
-            </Text>
+            <Text style={styles.price}>{formatPrice(product.price)}</Text>
           </View>
         </View>
       ) : (

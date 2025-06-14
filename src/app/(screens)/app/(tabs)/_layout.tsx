@@ -30,7 +30,8 @@ export default function TabsLayout() {
             title: "Carrinho",
             headerTitleStyle: {
               color: colors.primary,
-              fontFamily: "Poppins_500Medium",
+              fontFamily: "Poppins_600Semibold",
+              fontSize: 22,
             },
             headerTransparent: true,
             tabBarIcon: ({ color, size }) => (
@@ -44,7 +45,8 @@ export default function TabsLayout() {
             title: "Meus dados",
             headerTitleStyle: {
               color: colors.primary,
-              fontFamily: "Poppins_500Medium",
+              fontFamily: "Poppins_600Semibold",
+              fontSize: 22,
             },
             headerTransparent: true,
             tabBarIcon: ({ color, size }) => (
