@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
   productListContainer: {
     marginTop: 50,
     width: "100%",
+    flex: 1,
 
     padding: 24,
     gap: 20,

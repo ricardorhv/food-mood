@@ -74,8 +74,6 @@ export const styles = StyleSheet.create({
     padding: 8,
   },
 
-  quantityBtn: {},
-
   quantityText: {
     fontFamily: "Poppins_500Medium",
     fontSize: 14,

@@ -1,8 +1,9 @@
+import { useCart } from "@/hooks/useCart";
 import { colors } from "@/styles/colors";
 import { ProductCart } from "@/types/product";
 import { formatPrice } from "@/utils/format-price";
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
@@ -15,8 +16,21 @@ export function ProductCard({
   categoryName,
 }: ProductCart) {
   const [productQuantity, setProductQuantity] = useState(quantity);
+  const { changeProductQuantity } = useCart();
 
   const subtotal = productQuantity * price;
+
+  function increaseQuantity() {
+    setProductQuantity((prevState) => prevState + 1);
+  }
+
+  function decreaseQuantity() {
+    setProductQuantity((prevState) => prevState - 1);
+  }
+
+  useEffect(() => {
+    changeProductQuantity(id, productQuantity);
+  }, [productQuantity]);
 
   return (
     <View style={styles.container}>
@@ -39,14 +53,19 @@ export function ProductCard({
           </Pressable>
         </View>
 
-        <Text style={styles.price}>{formatPrice(price)}</Text>
+        <Text style={styles.price}>{formatPrice(subtotal)}</Text>
 
         <View style={styles.quantityContainer}>
-          <TouchableOpacity style={styles.quantityBtn}>
+          <TouchableOpacity
+            disabled={productQuantity === 1}
+            onPress={decreaseQuantity}
+          >
             <Ionicons size={20} color={colors.white} name="remove-outline" />
           </TouchableOpacity>
+
           <Text style={styles.quantityText}>{productQuantity}</Text>
-          <TouchableOpacity style={styles.quantityBtn}>
+
+          <TouchableOpacity onPress={increaseQuantity}>
             <Ionicons size={20} color={colors.white} name="add-outline" />
           </TouchableOpacity>
         </View>

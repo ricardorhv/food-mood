@@ -16,5 +16,4 @@ export interface ProductCart
   extends Pick<Product, "id" | "name" | "price" | "image"> {
   categoryName: string;
   quantity: number;
-  subtotal: number;
 }

@@ -1,4 +1,4 @@
-import { useCart } from "@/hooks/useCart";
+import { useCartContext } from "@/context/cart-context";
 import { colors } from "@/styles/colors";
 import { formatPreparationTime } from "@/utils/format-preparation-time";
 import { formatPrice } from "@/utils/format-price";
@@ -24,25 +24,18 @@ export function ProductCard({
   preparationTime,
   price,
 }: ProductCardProps) {
-  const { updateProductsCart, getProductsCart } = useCart();
+  const { addProductToCart } = useCartContext();
   const preparationTimeText = formatPreparationTime(preparationTime);
 
   async function handleAddProductToCart() {
     console.log(`${name} adicionado no carrinho`);
-    const productsCart = await getProductsCart();
-
-    const product = {
+    addProductToCart({
       id,
       name,
-      categoryName,
-      imageUrl,
-      preparationTime,
+      image: imageUrl,
       price,
-    };
-
-    // productsCart.push()
-
-    // updateProductsCart()
+      categoryName,
+    });
   }
 
   return (
