@@ -5,8 +5,6 @@ export async function getProducts() {
   try {
     const { data } = await api.get<Product[]>("/product");
 
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
-
     return {
       data,
     };
@@ -20,8 +18,6 @@ export async function getProducts() {
 export async function getProductById(productId: string) {
   try {
     const { data } = await api.get<Product>(`/product/${productId}`);
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return {
       data,

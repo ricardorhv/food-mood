@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
 
   detailsContainer: {
-    gap: 8,
+    gap: 30,
     marginHorizontal: 24,
     marginTop: 20,
   },
@@ -56,9 +56,9 @@ export const styles = StyleSheet.create({
 
   category: {
     fontSize: 12,
-    fontFamily: "Poppins_300Light",
+    fontFamily: "Poppins_500Medium",
 
-    color: colors["gray-400"],
+    color: colors["gray-200"],
   },
 
   preparionTimeContainer: {
@@ -69,18 +69,40 @@ export const styles = StyleSheet.create({
 
   preparionTimeText: {
     fontSize: 12,
-    fontFamily: "Poppins_300Light",
+    fontFamily: "Poppins_500Medium",
 
-    color: colors["gray-400"],
+    color: colors["gray-200"],
   },
 
   price: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: "Poppins_700Bold",
 
-    color: colors["gray-200"],
+    color: colors.white,
 
     alignSelf: "flex-end",
     marginTop: 20,
+  },
+
+  addToCartBtn: {
+    width: "100%",
+    marginTop: 20,
+
+    padding: 10,
+
+    alignItems: "center",
+    justifyContent: "center",
+
+    backgroundColor: colors.primary,
+    borderRadius: 4,
+
+    flexDirection: "row",
+    gap: 8,
+  },
+
+  addToCartBtnText: {
+    color: colors.secondary,
+
+    fontFamily: "Poppins_600SemiBold",
   },
 });

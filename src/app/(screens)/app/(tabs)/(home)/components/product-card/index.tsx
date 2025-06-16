@@ -28,7 +28,6 @@ export function ProductCard({
   const preparationTimeText = formatPreparationTime(preparationTime);
 
   async function handleAddProductToCart() {
-    console.log(`${name} adicionado no carrinho`);
     addProductToCart({
       id,
       name,

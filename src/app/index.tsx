@@ -17,6 +17,12 @@ export default function Home() {
           </TouchableOpacity>
         </Link>
 
+        <Link asChild href="/app">
+          <TouchableOpacity style={styles.btnContainer}>
+            <Text style={styles.btnText}>Home</Text>
+          </TouchableOpacity>
+        </Link>
+
         <Link asChild href="/auth/sign-in">
           <TouchableOpacity style={styles.btnContainer}>
             <Text style={styles.btnText}>Entrar</Text>

@@ -1,4 +1,5 @@
 import { LoadingIndicator } from "@/app/components/loading-indicator";
+import { useCartContext } from "@/context/cart-context";
 import { getProductById } from "@/services/product/product-service";
 import { colors } from "@/styles/colors";
 import { Product } from "@/types/product";
@@ -7,17 +8,30 @@ import { formatPrice } from "@/utils/format-price";
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function ProductDetails() {
   const { id } = useLocalSearchParams<Record<"id", string>>();
-  const [product, setProduct] = useState<Product | null>();
+  const [product, setProduct] = useState<Product | null>(null);
+  const { addProductToCart } = useCartContext();
+
+  function handleAddProductToCart() {
+    if (product) {
+      addProductToCart({
+        id,
+        name: product.name,
+        image: product.image,
+        price: product.price,
+        categoryName: product.category.name,
+      });
+    }
+  }
 
   useEffect(() => {
     (async function () {
       const { data } = await getProductById(id);
-      setProduct(data);
+      setProduct(data!);
     })();
   }, []);
 
@@ -59,7 +73,7 @@ export default function ProductDetails() {
                 <Ionicons
                   name="time-outline"
                   size={16}
-                  color={colors["gray-400"]}
+                  color={colors["gray-200"]}
                 />
                 <Text style={styles.preparionTimeText}>
                   {formatPreparationTime(product.preparationTime!)}
@@ -68,6 +82,18 @@ export default function ProductDetails() {
             </View>
 
             <Text style={styles.price}>{formatPrice(product.price)}</Text>
+
+            <TouchableOpacity
+              onPress={handleAddProductToCart}
+              style={styles.addToCartBtn}
+            >
+              <Ionicons
+                name="cart-outline"
+                size={25}
+                color={colors.secondary}
+              />
+              <Text style={styles.addToCartBtnText}>Adicionar ao carrinho</Text>
+            </TouchableOpacity>
           </View>
         </View>
       ) : (
