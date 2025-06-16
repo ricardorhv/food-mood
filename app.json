@@ -3,6 +3,11 @@
     "name": "FoodMood",
     "slug": "food-mood",
     "version": "1.0.0",
+    "splash": {
+      "image": "./src/assets/images/splash-screen.png",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": ["./src/assets/images/*"],
     "orientation": "portrait",
     "scheme": "foodmood",
     "userInterfaceStyle": "automatic",
@@ -19,22 +24,7 @@
       "bundler": "metro",
       "output": "static"
     },
-    "plugins": [
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#232323",
-          "image": "./src/assets/images/splash-screen.png",
-          "dark": {
-            "image": "./src/assets/images/splash-screen.png",
-            "backgroundColor": "#000000"
-          },
-          "imageWidth": 200
-        }
-      ],
-      "expo-router",
-      "expo-font"
-    ],
+
     "experiments": {
       "typedRoutes": true
     }
