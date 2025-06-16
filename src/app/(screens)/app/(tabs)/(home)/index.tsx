@@ -1,6 +1,6 @@
 import { LoadingIndicator } from "@/app/components/loading-indicator";
 import { useProductContext } from "@/context/product-context";
-import { FlatList, View } from "react-native";
+import { FlatList, SafeAreaView, View } from "react-native";
 import { EmptyProductList } from "./components/empty-product-list";
 import { Header } from "./components/header";
 import { ProductCard } from "./components/product-card";
@@ -11,7 +11,7 @@ export default function Home() {
   const isProductsEmpty = products.length === 0;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header />
       <View style={styles.wrapper}>
         {!isProductsEmpty ? (
@@ -45,6 +45,6 @@ export default function Home() {
           <LoadingIndicator size="large" />
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

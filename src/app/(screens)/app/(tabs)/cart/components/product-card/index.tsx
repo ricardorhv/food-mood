@@ -19,10 +19,8 @@ export function ProductCard({
   image,
   name,
   price,
-  // quantity,
   categoryName,
 }: ProductCart) {
-  // const [productQuantity, setProductQuantity] = useState(quantity);
   const { changeProductQuantity, removeProductFromCart, getProductCart } =
     useCartContext();
   const router = useRouter();
@@ -89,13 +87,13 @@ export function ProductCard({
 
         <View style={styles.quantityContainer}>
           <TouchableOpacity onPress={handleDecreaseQuantity}>
-            <Ionicons size={20} color={colors.white} name="remove-outline" />
+            <Ionicons size={30} color={colors.white} name="remove-outline" />
           </TouchableOpacity>
 
           <Text style={styles.quantityText}>{productQuantity}</Text>
 
           <TouchableOpacity onPress={handleIncreaseQuantity}>
-            <Ionicons size={20} color={colors.white} name="add-outline" />
+            <Ionicons size={30} color={colors.white} name="add-outline" />
           </TouchableOpacity>
         </View>
       </View>

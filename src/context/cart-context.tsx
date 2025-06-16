@@ -7,7 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Toast } from "toastify-react-native";
+import { Alert } from "react-native";
 
 interface CartContextProps {
   productsCart: ProductCart[];
@@ -72,6 +72,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     if (existsProductOnCart) {
       changeProductQuantity(product.id, existsProductOnCart.quantity + 1);
+      Alert.alert("Aviso", "Item já está no carrinho, quantidade aumentada!");
       return;
     }
 
@@ -85,7 +86,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       categoryName: product.categoryName,
     };
 
-    Toast.success("Item adicionado ao carrinho", "bottom");
+    Alert.alert("Aviso", "Item adicionado com sucesso!");
     setProductsCart((prevState) => [...prevState, newProductCart]);
     updateCartStorage([...productsCart, newProductCart]);
   }

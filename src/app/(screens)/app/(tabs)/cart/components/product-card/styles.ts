@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   infoContainer: {
     gap: 16,
     flex: 1,
-    height: "100%",
     justifyContent: "space-between",
   },
 
@@ -26,7 +25,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    gap: 10,
+    gap: 14,
   },
 
   titleAndSubtitle: {
@@ -71,14 +70,12 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     borderRadius: 4,
 
-    padding: 8,
+    padding: 4,
   },
 
   quantityText: {
     fontFamily: "Poppins_500Medium",
-    fontSize: 14,
-
-    lineHeight: 14,
+    fontSize: 16,
 
     color: colors.white,
   },

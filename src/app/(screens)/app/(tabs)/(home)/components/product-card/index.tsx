@@ -4,7 +4,7 @@ import { formatPreparationTime } from "@/utils/format-preparation-time";
 import { formatPrice } from "@/utils/format-price";
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 interface ProductCardProps {
@@ -55,7 +55,7 @@ export function ProductCard({
         }}
         asChild
       >
-        <View style={styles.container}>
+        <Pressable style={styles.container}>
           <Image
             source={{
               uri: imageUrl,
@@ -87,7 +87,7 @@ export function ProductCard({
               </View>
             </View>
           </View>
-        </View>
+        </Pressable>
       </Link>
     </View>
   );

@@ -40,12 +40,13 @@ export default function ProductDetails() {
       <Stack.Screen
         options={{
           headerShown: true,
-          headerTitle: "",
+          title: "",
           headerTitleStyle: {
             color: colors.primary,
           },
           headerTransparent: true,
           headerTintColor: colors.primary,
+          headerBackButtonDisplayMode: "minimal",
         }}
       />
       {product ? (

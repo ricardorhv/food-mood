@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
 
-    paddingHorizontal: 24,
     backgroundColor: colors.background,
   },
 
@@ -21,6 +20,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     gap: 16,
     marginHorizontal: 20,
+    paddingHorizontal: 24,
   },
 
   inputField: {

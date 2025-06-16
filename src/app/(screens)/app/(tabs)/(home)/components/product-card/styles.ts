@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
   },
 
   addProductToMinicartBtn: {
-    width: 35,
-    height: 35,
+    width: 45,
+    height: 45,
 
     borderRadius: 100,
 
@@ -22,8 +22,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
 
     position: "absolute",
-    left: "50%",
-    transform: "translateX(-50%)",
+    alignSelf: "center",
     bottom: 70,
     zIndex: 2,
 

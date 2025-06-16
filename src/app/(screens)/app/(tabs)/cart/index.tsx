@@ -1,6 +1,6 @@
 import { useCartContext } from "@/context/cart-context";
 import { formatPrice } from "@/utils/format-price";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, Pressable, SafeAreaView, Text, View } from "react-native";
 import { ItemSeparator } from "./components/item-separator";
 import { ProductCard } from "./components/product-card";
 import { styles } from "./styles";
@@ -14,7 +14,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {isEmptyCart ? (
         <View style={styles.emptyCartContainer}>
           <Text style={styles.emptyCartText}>
@@ -54,6 +54,6 @@ export default function Cart() {
           </View>
         </>
       )}
-    </View>
+    </SafeAreaView>
   );
 }

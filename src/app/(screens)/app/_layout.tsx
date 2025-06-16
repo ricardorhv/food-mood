@@ -1,19 +1,20 @@
 import { CartContextProvider } from "@/context/cart-context";
+import { ProductContextProvider } from "@/context/product-context";
 import { Stack } from "expo-router";
-import ToastManager from "toastify-react-native";
 
 export default function AppLayout() {
   return (
     <CartContextProvider>
-      <Stack>
-        <Stack.Screen
-          name="(tabs)"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <ToastManager />
-      </Stack>
+      <ProductContextProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen
+            name="(tabs)"
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack>
+      </ProductContextProvider>
     </CartContextProvider>
   );
 }

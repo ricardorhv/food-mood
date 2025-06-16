@@ -35,13 +35,10 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
 
     padding: 24,
-
-    marginTop: "auto",
     gap: 20,
   },
 
   rowContainer: {
-    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -61,7 +58,6 @@ export const styles = StyleSheet.create({
   },
 
   completeOrderBtn: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
 
