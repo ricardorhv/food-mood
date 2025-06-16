@@ -71,7 +71,7 @@ export default function ProductDetails() {
           </View>
         </View>
       ) : (
-        <LoadingIndicator size="small" />
+        <LoadingIndicator size="large" />
       )}
     </>
   );

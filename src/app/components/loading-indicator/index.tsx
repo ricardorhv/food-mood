@@ -9,7 +9,7 @@ interface LoadingIndicatorProps {
 export function LoadingIndicator({ size }: LoadingIndicatorProps) {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size={size} color={colors.orange} />
+      <ActivityIndicator size={size} color={colors.primary} />
     </View>
   );
 }

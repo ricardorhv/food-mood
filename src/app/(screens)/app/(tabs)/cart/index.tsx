@@ -1,4 +1,5 @@
 import { useCartContext } from "@/context/cart-context";
+import { formatPrice } from "@/utils/format-price";
 import { FlatList, Pressable, Text, View } from "react-native";
 import { ItemSeparator } from "./components/item-separator";
 import { ProductCard } from "./components/product-card";
@@ -6,7 +7,11 @@ import { styles } from "./styles";
 
 export default function Cart() {
   const { productsCart } = useCartContext();
+
   const isEmptyCart = productsCart.length === 0;
+  const total = productsCart.reduce((acc, productCart) => {
+    return acc + productCart.price * productCart.quantity;
+  }, 0);
 
   return (
     <View style={styles.container}>
@@ -41,7 +46,7 @@ export default function Cart() {
           <View style={styles.cartSummary}>
             <View style={styles.rowContainer}>
               <Text style={styles.totalText}>Total</Text>
-              <Text style={styles.valueText}>R$ 100,00</Text>
+              <Text style={styles.valueText}>{formatPrice(total)}</Text>
             </View>
             <Pressable style={styles.completeOrderBtn}>
               <Text style={styles.completeOrderText}>Finalizar pedido</Text>

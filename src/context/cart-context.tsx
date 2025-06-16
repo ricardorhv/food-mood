@@ -13,6 +13,7 @@ interface CartContextProps {
   changeProductQuantity: (id: string, quantity: number) => void;
   addProductToCart: (product: Omit<ProductCart, "quantity">) => void;
   removeProductFromCart: (id: string) => void;
+  getProductCart: (id: string) => ProductCart;
 }
 
 interface CartContextProviderProps {
@@ -36,15 +37,19 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   useEffect(() => {
     (async function () {
       const productsFromStorage = await getProductsCart();
+      console.log("Buscando produtos");
+
       setProductsCart(productsFromStorage);
     })();
   }, []);
 
-  // useEffect(() => {
-  //   updateCartStorage(productsCart);
-  // }, [productsCart]);
+  function getProductCart(id: string) {
+    return productsCart.find((product) => product.id === id)!;
+  }
 
   function changeProductQuantity(id: string, quantity: number) {
+    if (quantity === 0) return;
+
     const changedProducts = productsCart.map((product) => {
       if (product.id === id)
         return {
@@ -65,7 +70,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     );
 
     if (existsProductOnCart) {
-      changeProductQuantity(product.id, existsProductOnCart.quantity++);
+      changeProductQuantity(product.id, existsProductOnCart.quantity + 1);
       return;
     }
 
@@ -99,6 +104,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         addProductToCart,
         changeProductQuantity,
         removeProductFromCart,
+        getProductCart,
       }}
     >
       {children}
