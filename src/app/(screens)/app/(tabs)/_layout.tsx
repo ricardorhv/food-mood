@@ -23,15 +23,9 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="cart/index"
+        name="cart"
         options={{
-          title: "Carrinho",
-          headerTitleStyle: {
-            color: colors.primary,
-            fontFamily: "Poppins_600Semibold",
-            fontSize: 22,
-          },
-          headerTransparent: true,
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="cart-outline" size={size} color={color} />
           ),

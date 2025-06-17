@@ -1,17 +1,24 @@
 import { useCartContext } from "@/context/cart-context";
 import { formatPrice } from "@/utils/format-price";
+import { useRouter } from "expo-router";
 import { FlatList, Pressable, SafeAreaView, Text, View } from "react-native";
 import { ItemSeparator } from "./components/item-separator";
 import { ProductCard } from "./components/product-card";
 import { styles } from "./styles";
 
 export default function Cart() {
-  const { productsCart } = useCartContext();
+  const { productsCart, SHIPPING_RATE } = useCartContext();
+  const router = useRouter();
+
+  function navigateToCheckout() {
+    router.push("/app/cart/checkout/address");
+  }
 
   const isEmptyCart = productsCart.length === 0;
-  const total = productsCart.reduce((acc, productCart) => {
-    return acc + productCart.price * productCart.quantity;
-  }, 0);
+  const total =
+    productsCart.reduce((acc, productCart) => {
+      return acc + productCart.price * productCart.quantity;
+    }, 0) + SHIPPING_RATE;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -45,10 +52,17 @@ export default function Cart() {
 
           <View style={styles.cartSummary}>
             <View style={styles.rowContainer}>
+              <Text style={styles.rowText}>Frete</Text>
+              <Text style={styles.valueText}>{formatPrice(SHIPPING_RATE)}</Text>
+            </View>
+            <View style={styles.rowContainer}>
               <Text style={styles.totalText}>Total</Text>
               <Text style={styles.valueText}>{formatPrice(total)}</Text>
             </View>
-            <Pressable style={styles.completeOrderBtn}>
+            <Pressable
+              onPress={navigateToCheckout}
+              style={styles.completeOrderBtn}
+            >
               <Text style={styles.completeOrderText}>Finalizar pedido</Text>
             </Pressable>
           </View>

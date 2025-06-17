@@ -15,6 +15,7 @@ interface CartContextProps {
   addProductToCart: (product: Omit<ProductCart, "quantity">) => void;
   removeProductFromCart: (id: string) => void;
   getProductCart: (id: string) => ProductCart;
+  SHIPPING_RATE: number;
 }
 
 interface CartContextProviderProps {
@@ -25,6 +26,8 @@ const CartContext = createContext<CartContextProps>({} as CartContextProps);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [productsCart, setProductsCart] = useState<ProductCart[]>([]);
+
+  const SHIPPING_RATE = 15;
 
   async function getProductsCart(): Promise<ProductCart[]> {
     const productsCart = await AsyncStorage.getItem("productsCart");
@@ -38,8 +41,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   useEffect(() => {
     (async function () {
       const productsFromStorage = await getProductsCart();
-      console.log("Buscando produtos");
-
       setProductsCart(productsFromStorage);
     })();
   }, []);
@@ -108,6 +109,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         changeProductQuantity,
         removeProductFromCart,
         getProductCart,
+        SHIPPING_RATE,
       }}
     >
       {children}

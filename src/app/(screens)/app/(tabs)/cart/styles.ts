@@ -43,6 +43,13 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 
+  rowText: {
+    fontFamily: "Poppins_400Regular",
+    fontSize: 16,
+
+    color: colors.white,
+  },
+
   totalText: {
     fontFamily: "Poppins_700Bold",
     fontSize: 16,
