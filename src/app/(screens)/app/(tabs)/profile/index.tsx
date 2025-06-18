@@ -1,4 +1,3 @@
-import { useAuth } from "@/hooks/useAuth";
 import { getUser, updateUser } from "@/services/user/user-service";
 import { useEffect, useState } from "react";
 import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
@@ -22,17 +21,16 @@ export default function ProfileScreen() {
     setPassword(changedPassword);
   }
 
-  async function getUserId() {
-    const { getLoggedUser } = useAuth();
-    const userId = await getLoggedUser();
+  // async function getToken() {
+  //   const { getLoggedUser } = useAuth();
+  //   const token = await getLoggedUser();
 
-    return userId;
-  }
+  //   return token;
+  // }
 
   useEffect(() => {
     async function handleGetUser() {
-      const userId = await getUserId();
-      const { success, data: userData } = await getUser(userId);
+      const { success, data: userData } = await getUser();
 
       if (success) {
         loadData(userData?.name, userData?.email, userData?.phone);
@@ -43,7 +41,6 @@ export default function ProfileScreen() {
   }, []);
 
   async function handleUpdateUser() {
-    const userId = await getUserId();
     const hasChangedPassword = !!password.trim();
 
     const updatedUser = {
@@ -54,7 +51,6 @@ export default function ProfileScreen() {
     };
 
     const { success, errors } = await updateUser(
-      userId,
       hasChangedPassword
         ? updatedUser
         : {

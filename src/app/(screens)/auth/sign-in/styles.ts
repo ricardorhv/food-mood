@@ -17,8 +17,6 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     width: "100%",
     color: colors["gray-400"],
-    // outlineWidth: 1,
-    // outlineColor: colors.primary,
     borderWidth: 0,
 
     fontFamily: "Poppins_400Regular",
@@ -35,11 +33,13 @@ export const styles = StyleSheet.create({
 
     backgroundColor: colors.primary,
     borderRadius: 4,
+
+    marginTop: 10,
   },
 
   btnTextSignIn: {
     fontFamily: "Poppins_600SemiBold",
-    color: colors.white,
+    color: colors.background,
   },
 
   createAccount: {
@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
   createAccountText: {
     fontSize: 12,
     fontFamily: "Poppins_400Regular",
-    color: colors.background,
+    color: colors.primary,
     textDecorationLine: "underline",
   },
 });

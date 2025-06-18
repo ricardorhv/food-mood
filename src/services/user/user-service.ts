@@ -13,16 +13,9 @@ const updateUserBodyRequestSchema = z.strictObject({
 
 type UpdateUserBodyRequest = z.infer<typeof updateUserBodyRequestSchema>;
 
-export async function getUser(userId: string | null) {
-  if (!userId || !userId.trim()) {
-    return {
-      success: false,
-      errors: "ID do usuário inválido",
-    };
-  }
-
+export async function getUser() {
   try {
-    const { data } = await api.get<User>(`/user/${userId}`);
+    const { data } = await api.get<User>(`/user/me`);
 
     return {
       success: true,
@@ -31,22 +24,12 @@ export async function getUser(userId: string | null) {
   } catch {
     return {
       success: false,
-      errors: `Erro ao buscar dados do usuário ${userId}`,
+      errors: `Erro ao buscar dados do usuário`,
     };
   }
 }
 
-export async function updateUser(
-  userId: string | null,
-  updateUserBodyRequest: UpdateUserBodyRequest
-) {
-  if (!userId || !userId.trim()) {
-    return {
-      success: false,
-      errors: "ID do usuário inválido",
-    };
-  }
-
+export async function updateUser(updateUserBodyRequest: UpdateUserBodyRequest) {
   const {
     success,
     data: updatedUser,
@@ -61,7 +44,7 @@ export async function updateUser(
   }
 
   try {
-    const { data } = await api.patch<User>(`/user/${userId}`, updatedUser);
+    const { data } = await api.patch<User>(`/user`, updatedUser);
 
     return {
       success: true,

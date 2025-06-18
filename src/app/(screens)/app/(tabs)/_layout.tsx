@@ -1,8 +1,18 @@
+import { useAuth } from "@/hooks/useAuth";
 import { colors } from "@/styles/colors";
 import { Ionicons } from "@expo/vector-icons";
-import { Link, Tabs } from "expo-router";
+import { Tabs, useRouter } from "expo-router";
+import { Pressable, Text } from "react-native";
 
 export default function TabsLayout() {
+  const { signOut } = useAuth();
+  const router = useRouter();
+
+  function handleSignOut() {
+    signOut();
+    router.dismissTo("/");
+  }
+
   return (
     <Tabs
       screenOptions={{
@@ -46,17 +56,18 @@ export default function TabsLayout() {
           ),
           headerRight: () => {
             return (
-              <Link
-                style={{
-                  fontSize: 14,
-                  fontFamily: "Poppins_400Regular",
-                  marginRight: 24,
-                  color: colors["red-light"],
-                }}
-                href="/"
-              >
-                Sair
-              </Link>
+              <Pressable onPress={handleSignOut}>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    fontFamily: "Poppins_400Regular",
+                    marginRight: 24,
+                    color: colors["red-light"],
+                  }}
+                >
+                  Sair
+                </Text>
+              </Pressable>
             );
           },
         }}
