@@ -87,13 +87,13 @@ export function ProductCard({
 
         <View style={styles.quantityContainer}>
           <TouchableOpacity onPress={handleDecreaseQuantity}>
-            <Ionicons size={30} color={colors.white} name="remove-outline" />
+            <Ionicons size={30} color={colors.background} name="remove-outline" />
           </TouchableOpacity>
 
           <Text style={styles.quantityText}>{productQuantity}</Text>
 
           <TouchableOpacity onPress={handleIncreaseQuantity}>
-            <Ionicons size={30} color={colors.white} name="add-outline" />
+            <Ionicons size={30} color={colors.background} name="add-outline" />
           </TouchableOpacity>
         </View>
       </View>

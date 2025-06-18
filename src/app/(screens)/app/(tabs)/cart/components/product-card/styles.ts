@@ -77,6 +77,6 @@ export const styles = StyleSheet.create({
     fontFamily: "Poppins_500Medium",
     fontSize: 16,
 
-    color: colors.white,
+    color: colors.background,
   },
 });

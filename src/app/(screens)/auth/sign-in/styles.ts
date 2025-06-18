@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
   createAccountText: {
     fontSize: 12,
     fontFamily: "Poppins_400Regular",
-    color: colors.secondary,
+    color: colors.background,
     textDecorationLine: "underline",
   },
 });
