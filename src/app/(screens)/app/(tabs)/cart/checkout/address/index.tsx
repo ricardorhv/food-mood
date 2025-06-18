@@ -1,25 +1,24 @@
-import { getAddresses } from "@/services/address/address-service";
+import { useAddressContext } from "@/context/address-context";
 import { colors } from "@/styles/colors";
-import { UserAddress } from "@/types/address";
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { AddNewAddressModal } from "../components/add-new-address-modal";
 import { AddressItem } from "../components/address-item";
 import { EmptyUserAddress } from "../components/EmptyUserAddress";
 import { styles } from "./styles";
 
 export default function Address() {
-  const [addresses, setAddresses] = useState<UserAddress[]>([]);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const { addresses } = useAddressContext();
 
-  useEffect(() => {
-    (async function () {
-      const { data, success } = await getAddresses();
+  function handleOpenModal() {
+    setIsOpenModal(true);
+  }
 
-      if (success) {
-        setAddresses(data);
-      }
-    })();
-  }, []);
+  function handleCloseModal() {
+    setIsOpenModal(false);
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -44,9 +43,14 @@ export default function Address() {
           )}
         />
 
-        <TouchableOpacity style={styles.addAddressBtn}>
+        <TouchableOpacity
+          onPress={handleOpenModal}
+          style={styles.addAddressBtn}
+        >
           <Ionicons name="add-outline" size={25} color={colors.white} />
         </TouchableOpacity>
+
+        <AddNewAddressModal open={isOpenModal} closeModal={handleCloseModal} />
       </View>
     </SafeAreaView>
   );

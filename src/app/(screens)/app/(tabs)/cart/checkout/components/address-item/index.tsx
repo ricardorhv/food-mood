@@ -1,5 +1,5 @@
 import { colors } from "@/styles/colors";
-import { Address } from "@/types/address";
+import { UserAddress } from "@/types/address";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useState } from "react";
@@ -14,7 +14,7 @@ export function AddressItem({
   houseNumber,
   state,
   street,
-}: Address) {
+}: UserAddress) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 

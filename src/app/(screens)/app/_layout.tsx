@@ -13,6 +13,12 @@ export default function AppLayout() {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="order-placed/index"
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack>
       </ProductContextProvider>
     </CartContextProvider>

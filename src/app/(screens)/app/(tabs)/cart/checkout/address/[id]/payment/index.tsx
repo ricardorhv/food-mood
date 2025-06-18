@@ -30,9 +30,7 @@ export default function Payment() {
   }
 
   function finishOrder() {
-    router.dismissTo(
-      `/(screens)/app/(tabs)/cart/checkout/address/${addressId}/payment/order-placed`
-    );
+    router.dismissTo(`/(screens)/app/order-placed`);
   }
 
   return (
