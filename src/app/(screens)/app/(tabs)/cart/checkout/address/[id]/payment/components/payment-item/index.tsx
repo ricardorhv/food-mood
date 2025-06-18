@@ -1,11 +1,13 @@
 import { colors } from "@/styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useState } from "react";
 import { Pressable, Text } from "react-native";
 import { styles } from "./styles";
 
 interface PaymentItemProps {
+  id: string;
   name: keyof typeof icons;
+  onSelect: (id: string) => void;
+  isSelected: boolean;
 }
 
 const icons = {
@@ -27,13 +29,21 @@ const icons = {
   },
 } as const;
 
-export function PaymentItem({ name }: PaymentItemProps) {
-  const [isSelected, setIsSelected] = useState(false);
-
+export function PaymentItem({
+  id,
+  name,
+  onSelect,
+  isSelected,
+}: PaymentItemProps) {
   const { icon, label } = icons[name];
+
+  function handleSelectPaymentItem() {
+    onSelect(id);
+  }
 
   return (
     <Pressable
+      onPress={handleSelectPaymentItem}
       style={{
         ...styles.container,
         backgroundColor: isSelected ? colors.primary : "transparent",

@@ -63,7 +63,7 @@ export default function Cart() {
               onPress={navigateToCheckout}
               style={styles.completeOrderBtn}
             >
-              <Text style={styles.completeOrderText}>Finalizar pedido</Text>
+              <Text style={styles.completeOrderText}>Checkout</Text>
             </Pressable>
           </View>
         </>

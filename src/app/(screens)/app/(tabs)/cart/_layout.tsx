@@ -44,6 +44,12 @@ export default function CartLayout() {
           headerTransparent: true,
         }}
       />
+      <Stack.Screen
+        name="checkout/address/[id]/payment/order-placed/index"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
