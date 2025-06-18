@@ -1,4 +1,6 @@
-import { FlatList, SafeAreaView, View } from "react-native";
+import { colors } from "@/styles/colors";
+import { Ionicons } from "@expo/vector-icons";
+import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 import { AddressItem } from "../components/address-item";
 import { styles } from "./styles";
 
@@ -45,6 +47,10 @@ export default function Address() {
             />
           )}
         />
+
+        <TouchableOpacity style={styles.addAddressBtn}>
+          <Ionicons name="add-outline" size={25} color={colors.white} />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

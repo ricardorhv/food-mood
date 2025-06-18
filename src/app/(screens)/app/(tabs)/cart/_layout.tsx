@@ -30,6 +30,20 @@ export default function CartLayout() {
           headerTransparent: true,
         }}
       />
+      <Stack.Screen
+        name="checkout/address/[id]/payment/index"
+        options={{
+          title: "Pagamento",
+          headerTitleStyle: {
+            color: colors.primary,
+            fontFamily: "Poppins_600Semibold",
+            fontSize: 22,
+          },
+          headerTitleAlign: "center",
+          headerTintColor: colors.primary,
+          headerTransparent: true,
+        }}
+      />
     </Stack>
   );
 }

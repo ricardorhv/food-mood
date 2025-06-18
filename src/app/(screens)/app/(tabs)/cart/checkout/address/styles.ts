@@ -9,4 +9,23 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 100,
   },
+
+  addAddressBtn: {
+    width: 45,
+    height: 45,
+
+    borderRadius: 100,
+
+    alignItems: "center",
+    justifyContent: "center",
+
+    backgroundColor: colors.primary,
+
+    position: "fixed",
+    bottom: 100,
+    right: 24,
+    zIndex: 2,
+
+    boxShadow: "0px 0px 10px #00000020",
+  },
 });

@@ -1,6 +1,7 @@
 import { colors } from "@/styles/colors";
 import { Address } from "@/types/address";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Modal, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
@@ -14,11 +15,22 @@ export function AddressItem({
   state,
   street,
 }: Address) {
-  const formattedAddress = `${street}, ${neighborhood}, ${houseNumber}, ${city} - ${state}`;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+
+  const formattedAddress = `${street}, ${neighborhood}, ${houseNumber}, ${city} - ${state}`;
+
+  function navigateToPaymentScreen() {
+    router.push({
+      pathname: "/app/cart/checkout/address/[id]/payment",
+      params: {
+        id,
+      },
+    });
+  }
 
   return (
-    <View style={styles.container}>
+    <Pressable onPress={navigateToPaymentScreen} style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.addressName}>{name}</Text>
         <Modal animationType="slide" visible={isModalOpen}>
@@ -37,6 +49,6 @@ export function AddressItem({
       </View>
 
       <Text style={styles.addressDescription}>{formattedAddress}</Text>
-    </View>
+    </Pressable>
   );
 }
