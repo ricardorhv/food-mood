@@ -40,6 +40,6 @@ export const styles = StyleSheet.create({
 
   btnTextSignUp: {
     fontFamily: "Poppins_600SemiBold",
-    color: colors.secondary,
+    color: colors.background,
   },
 });

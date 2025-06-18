@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
   },
 
   btnTextUpdate: {
-    color: colors.secondary,
+    color: colors.background,
 
     fontFamily: "Poppins_600SemiBold",
   },

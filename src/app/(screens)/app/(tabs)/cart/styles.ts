@@ -47,14 +47,14 @@ export const styles = StyleSheet.create({
     fontFamily: "Poppins_700Bold",
     fontSize: 16,
 
-    color: colors.white,
+    color: colors.background,
   },
 
   valueText: {
     fontFamily: "Poppins_500Medium",
     fontSize: 16,
 
-    color: colors.white,
+    color: colors.background,
   },
 
   completeOrderBtn: {
@@ -71,6 +71,6 @@ export const styles = StyleSheet.create({
     fontFamily: "Poppins_500Medium",
     fontSize: 16,
 
-    color: colors.primary,
+    color: colors.background,
   },
 });
