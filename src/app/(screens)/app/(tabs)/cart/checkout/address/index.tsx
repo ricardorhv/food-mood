@@ -1,31 +1,26 @@
+import { getAddresses } from "@/services/address/address-service";
 import { colors } from "@/styles/colors";
+import { UserAddress } from "@/types/address";
 import { Ionicons } from "@expo/vector-icons";
+import { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 import { AddressItem } from "../components/address-item";
+import { EmptyUserAddress } from "../components/EmptyUserAddress";
 import { styles } from "./styles";
 
-const data = [
-  {
-    id: "1",
-    name: "Home",
-    city: "Assis",
-    state: "Paraná",
-    neighborhood: "Jardim",
-    street: "Rua",
-    houseNumber: "123",
-  },
-  {
-    id: "2",
-    name: "School",
-    city: "Assis",
-    state: "Paraná",
-    neighborhood: "Jardim",
-    street: "Rua",
-    houseNumber: "123",
-  },
-];
-
 export default function Address() {
+  const [addresses, setAddresses] = useState<UserAddress[]>([]);
+
+  useEffect(() => {
+    (async function () {
+      const { data, success } = await getAddresses();
+
+      if (success) {
+        setAddresses(data);
+      }
+    })();
+  }, []);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -33,7 +28,8 @@ export default function Address() {
           contentContainerStyle={{
             gap: 20,
           }}
-          data={data}
+          data={addresses}
+          ListEmptyComponent={<EmptyUserAddress />}
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
             <AddressItem

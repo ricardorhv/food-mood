@@ -47,6 +47,7 @@ export function PaymentItem({
       style={{
         ...styles.container,
         backgroundColor: isSelected ? colors.primary : "transparent",
+        borderColor: isSelected ? colors.primary : colors["gray-400"],
       }}
     >
       <MaterialIcons
@@ -57,7 +58,7 @@ export function PaymentItem({
       <Text
         style={{
           ...styles.text,
-          color: isSelected ? colors.background : colors.white,
+          color: isSelected ? colors.background : colors["gray-400"],
         }}
       >
         {label}

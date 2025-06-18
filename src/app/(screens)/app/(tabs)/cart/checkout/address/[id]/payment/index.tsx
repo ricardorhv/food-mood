@@ -1,32 +1,29 @@
+import { getPayments } from "@/services/payment/payment-service";
+import { PaymentMethod } from "@/types/payment";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FlatList, Pressable, SafeAreaView, Text, View } from "react-native";
 import { PaymentItem } from "./components/payment-item";
 import { styles } from "./styles";
 
-const data = [
-  {
-    id: "1",
-    name: "CREDIT_CARD",
-  },
-  {
-    id: "2",
-    name: "DEBIT_CARD",
-  },
-  {
-    id: "3",
-    name: "IN_CASH",
-  },
-  {
-    id: "4",
-    name: "PIX",
-  },
-] as const;
-
 export default function Payment() {
-  const [paymentSelected, setPaymentSelected] = useState<string>("1");
+  const [payments, setPayments] = useState<PaymentMethod[]>([]);
+  const [paymentSelected, setPaymentSelected] = useState<string>("");
   const { id: addressId } = useLocalSearchParams();
   const router = useRouter();
+
+  useEffect(() => {
+    (async function () {
+      const { success, data } = await getPayments();
+
+      if (success) {
+        console.log();
+
+        setPayments(data);
+        setPaymentSelected(data[0].id);
+      }
+    })();
+  }, []);
 
   function handleSelectPayment(paymentId: string) {
     setPaymentSelected(paymentId);
@@ -42,15 +39,15 @@ export default function Payment() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <FlatList
-          data={data}
+          data={payments}
           keyExtractor={({ id }) => id}
-          contentContainerStyle={{ gap: 10 }}
+          contentContainerStyle={{ gap: 20 }}
           renderItem={({ item }) => (
             <PaymentItem
               isSelected={paymentSelected === item.id}
               onSelect={handleSelectPayment}
               id={item.id}
-              name={item.name}
+              name={item.methodPayment}
             />
           )}
         />
