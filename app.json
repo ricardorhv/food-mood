@@ -23,7 +23,8 @@
     },
     "android": {
       "edgeToEdgeEnabled": true,
-      "package": "com.anonymous.foodmood"
+      "package": "com.anonymous.foodmood",
+      "usesCleartextTraffic": true
     },
     "web": {
       "bundler": "metro",
