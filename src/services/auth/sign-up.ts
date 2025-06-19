@@ -53,8 +53,6 @@ export async function signUp(
 
   try {
     const { data } = await api.post("/auth/sign-up", user);
-    console.log(data);
-
     return {
       success: true,
       data,

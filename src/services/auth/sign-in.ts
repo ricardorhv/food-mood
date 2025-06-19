@@ -53,8 +53,6 @@ export async function signIn(
     const { data } = await api.post<SignInBodyResponse>("/auth/sign-in", user);
     const { authenticate } = useAuth();
 
-    console.log(data);
-
     authenticate(data.accessToken);
 
     return {

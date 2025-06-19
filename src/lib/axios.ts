@@ -10,8 +10,6 @@ api.interceptors.request.use(
     const { getLoggedUser } = useAuth();
     const token = await getLoggedUser();
 
-    console.log(token);
-
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

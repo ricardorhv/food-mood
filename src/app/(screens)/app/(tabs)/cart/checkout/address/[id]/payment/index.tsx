@@ -15,15 +15,13 @@ export default function Payment() {
   const { id: addressId } = useLocalSearchParams();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const { productsCart, SHIPPING_RATE } = useCartContext();
+  const { productsCart, SHIPPING_RATE, resetCartContext } = useCartContext();
 
   useEffect(() => {
     (async function () {
       const { success, data } = await getPayments();
 
       if (success) {
-        console.log();
-
         setPayments(data);
         setPaymentSelected(data[0].id);
       }
@@ -49,8 +47,8 @@ export default function Payment() {
       }, 2000);
     });
     setIsLoading(false);
+    resetCartContext();
     router.dismissTo(`/(screens)/app/order-placed`);
-    // createOrder(paymentSelected, addressId as string, productsCart, SHIPPING_RATE);
   }
 
   return (

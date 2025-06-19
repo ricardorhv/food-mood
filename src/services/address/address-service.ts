@@ -60,8 +60,6 @@ export async function createAddress(addressBodyRequest: AddressBodyRequest) {
 
   try {
     const { data } = await api.post("/user/address", address);
-    console.log(data);
-
     return {
       success: true,
       data,

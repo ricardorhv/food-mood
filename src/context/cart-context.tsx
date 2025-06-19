@@ -15,6 +15,7 @@ interface CartContextProps {
   addProductToCart: (product: Omit<ProductCart, "quantity">) => void;
   removeProductFromCart: (id: string) => void;
   getProductCart: (id: string) => ProductCart;
+  resetCartContext: () => void;
   SHIPPING_RATE: number;
 }
 
@@ -101,6 +102,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     updateCartStorage(productsCartWithoutRemoveOne);
   }
 
+  function resetCartContext() {
+    updateCartStorage([]);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -110,6 +115,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         removeProductFromCart,
         getProductCart,
         SHIPPING_RATE,
+        resetCartContext,
       }}
     >
       {children}
