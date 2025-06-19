@@ -27,6 +27,9 @@ export default function CartLayout() {
               fontFamily: "Poppins_600Semibold",
               fontSize: 22,
             },
+            headerStyle: {
+              backgroundColor: colors.background,
+            },
             headerTitleAlign: "center",
             headerTintColor: colors.primary,
             headerTransparent: true,
@@ -40,6 +43,9 @@ export default function CartLayout() {
               color: colors.primary,
               fontFamily: "Poppins_600Semibold",
               fontSize: 22,
+            },
+            headerStyle: {
+              backgroundColor: colors.background,
             },
             headerTitleAlign: "center",
             headerTintColor: colors.primary,

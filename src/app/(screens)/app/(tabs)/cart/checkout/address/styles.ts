@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
 
     backgroundColor: colors.primary,
 
-    position: "fixed",
+    position: "absolute",
     bottom: 100,
     right: 24,
     zIndex: 2,

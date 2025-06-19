@@ -1,7 +1,17 @@
+import { useRouter } from "expo-router";
+import { useEffect } from "react";
 import { Image, SafeAreaView, Text, View } from "react-native";
 import { styles } from "./styles";
 
 export default function OrderPlaced() {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.dismissTo("/(screens)/app/(tabs)/(home)");
+    }, 4000);
+  }, []);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>

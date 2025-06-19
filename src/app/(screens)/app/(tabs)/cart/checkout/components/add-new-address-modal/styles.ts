@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.background,
 
     paddingHorizontal: 24,
-    paddingVertical: 40,
+    paddingVertical: 80,
 
     position: "relative",
   },
@@ -21,8 +21,8 @@ export const styles = StyleSheet.create({
   },
 
   closeBtn: {
-    position: "fixed",
-    top: 32,
+    position: "absolute",
+    top: 62,
     right: 24,
 
     zIndex: 10,

@@ -7,14 +7,19 @@
       "image": "./src/assets/images/splash-screen.png",
       "resizeMode": "contain"
     },
-    "assetBundlePatterns": ["./src/assets/images/*"],
+    "assetBundlePatterns": [
+      "./src/assets/images/*"
+    ],
     "orientation": "portrait",
     "scheme": "foodmood",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.foodmood"
+      "bundleIdentifier": "com.anonymous.foodmood",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "edgeToEdgeEnabled": true,
@@ -24,9 +29,13 @@
       "bundler": "metro",
       "output": "static"
     },
-
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d7ff065f-c169-4fad-82da-c58135fc9212"
+      }
     }
   }
 }
