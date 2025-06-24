@@ -29,7 +29,6 @@ export default function Address() {
           }}
           data={addresses}
           ListEmptyComponent={<EmptyUserAddress />}
-          keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
             <AddressItem
               id={item.id}
@@ -41,6 +40,7 @@ export default function Address() {
               street={item.street}
             />
           )}
+          keyExtractor={(item) => item.id}
         />
 
         <TouchableOpacity

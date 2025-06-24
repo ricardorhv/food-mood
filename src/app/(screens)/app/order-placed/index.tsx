@@ -21,7 +21,7 @@ export default function OrderPlaced() {
         />
 
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Seu pedido foi feito!</Text>
+          <Text style={styles.title}>Seu pedido foi finalizado!</Text>
           <Text style={styles.subtitle}>
             Obrigado por comprar com os melhores!
           </Text>

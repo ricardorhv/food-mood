@@ -27,7 +27,7 @@ export function AddNewAddressModal({
       return;
     }
 
-    addNewAddress(address);
+    addNewAddress(data);
     closeModal();
   }
 
